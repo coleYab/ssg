@@ -13,7 +13,7 @@ class HTMLNode:
         self.props = props
 
     def to_html(self):
-        raise NotImplemented
+        raise NotImplementedError("Under construction")
 
     def props_to_html(self):
         conv_props = lambda x: f'{x[0]}="{x[1]}"'
@@ -21,5 +21,6 @@ class HTMLNode:
             return reduce(
                 lambda x, y: f"{x} {conv_props(y)}",
                 self.props.items(), ""
-                )
+                ).strip()
+
         return None
