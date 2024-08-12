@@ -13,7 +13,7 @@ class HTMLNodeTest(unittest.TestCase):
     
     def test_to_props_returns_none(self):
         html_node = HTMLNode('a', "TestIT", None, None)
-        self.assertEqual(html_node.props_to_html(), None)    
+        self.assertEqual(html_node.props_to_html(), '')    
 
     def test_to_props_with_two_props(self):
         html_node = HTMLNode('a', "TestIT", None, {'href': 'www.test', 'style': 'test'})
