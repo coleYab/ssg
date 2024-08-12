@@ -6,7 +6,7 @@ HTMLNode class to represent in the entire assignment
 from functools import reduce
 
 class HTMLNode:
-    def __init__(self, tag=None, value=None, children=None, props=None):
+    def __init__(self, tag, value, children, props):
         self.tag = tag
         self.value = value
         self.children = children
@@ -23,4 +23,15 @@ class HTMLNode:
                 self.props.items(), ""
                 ).strip()
 
-        return None
+        return ''
+
+    def __re__(self):
+        return f"HTMLNode => tag: {self.tag}, value: {self.value}, children: {self.children}, props: {self.props}"
+
+    def __eq__(self, o):
+        return (
+            self.tag == o.tag and
+            self.value == o.value and
+            self.children == o.children and
+            self.props == o.props
+        )
