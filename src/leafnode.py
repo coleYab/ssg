@@ -17,8 +17,7 @@ class LeafNode(HTMLNode):
     def to_html(self):
         if self.tag is None:
             return f"{self.value}"
-        html_props = "" if self.props is None else f" {self.props_to_html()}"
-        return f"<{self.tag}{html_props}>{self.value}</{self.tag}>"
+        return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
 
     def __eq__(self, o):
         return super().__eq__(o)
