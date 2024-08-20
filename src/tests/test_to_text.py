@@ -4,7 +4,7 @@ test cases for testing conversion between text node to html node
 """
 
 import unittest
-from src.leafnode import LeafNode
+from src.htmlnode import LeafNode
 from src.textnode import TextNode
 from src.to_text import text_node_to_html_node
 

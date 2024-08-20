@@ -3,8 +3,7 @@
 testing parent node
 """
 
-from src.parentnode import ParentNode
-from src.leafnode import LeafNode
+from src.htmlnode import LeafNode, ParentNode
 import unittest
 
 class ParentNodeTest(unittest.TestCase):

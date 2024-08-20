@@ -4,7 +4,7 @@ Some tests for the leaf nodes including some edge cases
 """
 
 import unittest
-from src.leafnode import LeafNode
+from src.htmlnode import LeafNode
 
 class LeafNodeTest(unittest.TestCase):
     def test_leaf_anchor_html(self):

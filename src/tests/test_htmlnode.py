@@ -3,9 +3,7 @@
 TestCases for htmlnode
 """
 
-from src.htmlnode import HTMLNode
-from src.leafnode import LeafNode
-from src.parentnode import ParentNode
+from src.htmlnode import HTMLNode, LeafNode, ParentNode
 import unittest
 
 class HTMLNodeTest(unittest.TestCase):
