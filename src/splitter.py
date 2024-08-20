@@ -70,8 +70,11 @@ def split_nodes_image(old_nodes: typing.List[TextNode]):
 
     for node in old_nodes:
         images = extract_markdown_images(node.text)
+        if len(images) == 0:
+            res.append(node)
+            continue
+
         text_nodes = re.split(r'!\[[^\]]*\]\([^)]*\)', node.text)
-    
         for i in range(len(text_nodes)):
             if len(text_nodes[i].strip()) != 0:
                 res.append(TextNode(text_nodes[i], node.text_type, node.url))
@@ -88,13 +91,17 @@ def split_nodes_link(old_nodes: typing.List[TextNode]):
     for node in old_nodes:
 
         links = extract_markdown_links(node.text)
+        if len(links) == 0:
+            res.append(node)
+            continue
+
         text_nodes = re.split(r'\[[^\]]*\]\([^)]*\)', node.text)
         for i in range(len(text_nodes)):
             if len(text_nodes[i].strip()) != 0:
                 res.append(TextNode(text_nodes[i], node.text_type, node.url))
             
             if i != len(text_nodes) - 1:
+                print(links)
                 res.append(TextNode(links[i][0], text_type_link, links[i][1]))
 
     return res
-
