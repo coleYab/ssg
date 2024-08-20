@@ -48,13 +48,7 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
         generate_pages_recursive(os.path.join(dir_path_content, from_path), template_path, os.path.join(dest_dir_path, from_path))
 
 
-
 def generate_page(from_path, template_path, dest_path):
-
-    print(f"Generating: {from_path}")
-    print("--------------")
-    print(f"Generated at: {dest_path}")
-
     if not os.path.exists(from_path) and not os.path.exists(template_path):
         if os.path.exists(template_path):
             raise Exception("Markdown file doesn't exists")
@@ -71,13 +65,10 @@ def generate_page(from_path, template_path, dest_path):
 
     write_to_file(dest_path, template_content)
 
-    print("----------")
-    print("Done")
-    print("-----------")
 
 def main():
     copy_directory('./static', './public/static')
     data = generate_pages_recursive('./content/', './template.html', './public/')
-    print(read_file('./public/index.html'))
+
 
 main()

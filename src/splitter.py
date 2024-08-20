@@ -101,7 +101,6 @@ def split_nodes_link(old_nodes: typing.List[TextNode]):
                 res.append(TextNode(text_nodes[i], node.text_type, node.url))
             
             if i != len(text_nodes) - 1:
-                print(links)
                 res.append(TextNode(links[i][0], text_type_link, links[i][1]))
 
     return res

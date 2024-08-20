@@ -54,8 +54,6 @@ def get_list_node(markdown_block, block_type):
         list_tag = 'ul'
         regex = r'- ' if markdown_block.startswith('-') else r'\* '
 
-    print("----")
-    print(markdown_block)
     childrens = list(map(
         lambda cur_list: ParentNode(
             'li', block_content_to_html_childrens(re.split(regex, cur_list)[1])
