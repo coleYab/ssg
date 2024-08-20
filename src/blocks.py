@@ -3,12 +3,12 @@
 Here is my block implemnetation
 """
 
+
 from src.textnode import TextNode
 from src.htmlnode import ParentNode
 from src.splitter import *
 from src.to_text import *
 from functools import reduce
-from typing import List
 
 
 def markdown_to_html_node(markdown):
