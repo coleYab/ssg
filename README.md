@@ -14,3 +14,7 @@ cd ssg
 ```
 
 This will start a server on `localhost` at port `8888` to quit you can press `CTRL + C`.
+
+## Usage
+
+After starting the server you need to go to the link [http://localhost:8888/](http://localhost:8888/)
